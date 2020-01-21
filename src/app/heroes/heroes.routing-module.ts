@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
+import {HeroesComponent} from "./containers/heroes/heroes.component";
+import {HeroComponent} from "./containers/hero/hero.component";
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/component1', pathMatch: 'full'},
+  { path: 'heroes', component: HeroesComponent },
+  { path: 'heroes/:id', component: HeroComponent },
 ];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(
+    RouterModule.forChild(
       appRoutes,
     )
   ],
@@ -19,4 +22,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class HeroesRoutingModule { }

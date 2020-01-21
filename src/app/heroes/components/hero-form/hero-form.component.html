@@ -1,0 +1,25 @@
+<form *ngIf="hero; else loading">
+  <div>
+    <label>id: </label>
+    <input type="text" [value]="hero.id" disabled>
+  </div>
+  <div>
+    <label>Name: </label>
+    <input type="text" [value]="hero.name" disabled>
+  </div>
+  <div>
+    <label>Age: </label>
+    <input type="text" [value]="hero.age" disabled>
+  </div>
+  <div>
+    <label>Email: </label>
+    <input type="text" [value]="hero.email" disabled>
+  </div>
+  <div>
+    <button type="button">Submit</button>
+  </div>
+</form>
+
+<ng-template #loading>
+  Loading...
+</ng-template>

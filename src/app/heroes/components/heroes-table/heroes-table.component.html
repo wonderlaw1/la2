@@ -1,0 +1,22 @@
+<table *ngIf="heroes; else loading">
+  <thead>
+  <tr>
+    <td>id</td>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Email</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let hero of heroes">
+    <td class="hoverable" [routerLink]="['/heroes', hero.id]">{{ hero.id }}</td>
+    <td>{{ hero.name }}</td>
+    <td>{{ hero.age }}</td>
+    <td>{{ hero.email }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #loading>
+  Loading...
+</ng-template>

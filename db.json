@@ -1,0 +1,22 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "IronMan",
+      "age": 33,
+      "email": "ironman@marvel.com"
+    },
+    {
+      "id": 2,
+      "name": "IlonMusk",
+      "age": 41,
+      "email": "ilonmusk@marvel.com"
+    },
+    {
+      "id": 3,
+      "name": "Thor",
+      "age": 9999,
+      "email": "thor@marvel.com"
+    }
+  ]
+}

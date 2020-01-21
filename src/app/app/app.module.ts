@@ -1,10 +1,11 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import {AppComponent} from './app.component';
+import {AppComponent} from './containers/app/app.component';
 import {AppRoutingModule} from "./app.routing-module";
-import {Module1Module} from "./module1/module1.module";
-import {Module2Module} from "./module2/module2.module";
+import {HeroesModule} from "../heroes/heroes.module";
+import {Module2Module} from "../module2/module2.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -13,8 +14,9 @@ import {Module2Module} from "./module2/module2.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Module1Module,
-    Module2Module
+    HeroesModule,
+    Module2Module,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

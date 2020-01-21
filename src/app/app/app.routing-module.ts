@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
-import {Module1Component} from "./module1.component";
 
 
 const appRoutes: Routes = [
-  { path: 'component1', component: Module1Component },
+  { path: '', redirectTo: '/heroes', pathMatch: 'full'},
 ];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(
+    RouterModule.forRoot(
       appRoutes,
     )
   ],
@@ -20,4 +19,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class Module1RoutingModule { }
+export class AppRoutingModule { }
