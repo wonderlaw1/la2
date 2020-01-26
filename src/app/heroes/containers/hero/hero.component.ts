@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import { Hero } from '../heroes/heroes.component';
 
@@ -14,13 +14,30 @@ export class HeroComponent implements OnInit {
   private id: string;
 
   constructor(private route: ActivatedRoute,
-              private http: HttpClient) { }
+              private http: HttpClient,
+              private router: Router) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    this.http.get<Hero>(`http://localhost:3000/heroes/${this.id}`).subscribe(hero => {
-      this.hero = hero;
-    })
+    if (this.id) {
+      this.http.get<Hero>(`http://localhost:3000/heroes/${this.id}`).subscribe(hero => {
+        this.hero = hero;
+      });
+      return;
+    }
+    this.hero = {} as Hero;
+  }
+
+  onHeroSubmit(hero: Hero) {
+    if (hero.id) {
+      this.http.put(`http://localhost:3000/heroes/${hero.id}`, hero).subscribe(() => {
+        this.router.navigate(["../"]);
+      });
+      return;
+    }
+    this.http.post('http://localhost:3000/heroes/', hero).subscribe(() => {
+      this.router.navigate(["../"]);
+    });
   }
 
 }

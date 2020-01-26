@@ -26,5 +26,4 @@ export class HeroesComponent implements OnInit {
       this.heroes = heroes;
     });
   }
-
 }

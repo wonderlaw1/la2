@@ -1,2 +1,2 @@
 <button [routerLink]="['../']">Back</button>
-<app-hero-form [hero]="hero"></app-hero-form>
+<app-hero-form (submit)="onHeroSubmit($event)" [hero]="hero"></app-hero-form>

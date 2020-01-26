@@ -7,6 +7,7 @@ import {HeroComponent} from "./containers/hero/hero.component";
 
 const appRoutes: Routes = [
   { path: 'heroes', component: HeroesComponent },
+  { path: 'heroes/new', component: HeroComponent },
   { path: 'heroes/:id', component: HeroComponent },
 ];
 

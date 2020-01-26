@@ -1,0 +1,9 @@
+.hero-form-wrapper {
+  width: 33%;
+  margin: 0 auto;
+}
+
+.hero-form {
+  display: flex;
+  flex-direction: column;
+}

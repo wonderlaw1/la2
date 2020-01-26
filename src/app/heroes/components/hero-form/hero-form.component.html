@@ -1,25 +1,26 @@
-<form *ngIf="hero; else loading">
-  <div>
-    <label>id: </label>
-    <input type="text" [value]="hero.id" disabled>
-  </div>
-  <div>
-    <label>Name: </label>
-    <input type="text" [value]="hero.name" disabled>
-  </div>
-  <div>
-    <label>Age: </label>
-    <input type="text" [value]="hero.age" disabled>
-  </div>
-  <div>
-    <label>Email: </label>
-    <input type="text" [value]="hero.email" disabled>
-  </div>
-  <div>
-    <button type="button">Submit</button>
-  </div>
-</form>
+<div class="hero-form-wrapper">
+  <form *ngIf="isLoaded; else loading" [formGroup]="form" class="hero-form">
+    <mat-form-field *ngIf="form.value.id">
+      <input matInput placeholder="id" formControlName="id" readonly>
+      <mat-error *ngIf="form.controls.id.errors?.required">id required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="name" formControlName="name">
+      <mat-error *ngIf="form.controls.name.errors?.required">name required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="age" formControlName="age">
+      <mat-error *ngIf="form.controls.age.errors?.required">age required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="email" formControlName="email">
+      <mat-error *ngIf="form.controls.email.errors?.email">email invalid</mat-error>
+      <mat-error *ngIf="form.controls.email.errors?.required">email required</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="form.invalid">Submit</button>
+  </form>
 
-<ng-template #loading>
-  Loading...
-</ng-template>
+  <ng-template #loading>
+    Loading...
+  </ng-template>
+</div>

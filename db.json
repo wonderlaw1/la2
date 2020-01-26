@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "IronMan",
-      "age": 33,
+      "age": "55",
       "email": "ironman@marvel.com"
     },
     {
@@ -17,6 +17,24 @@
       "name": "Thor",
       "age": 9999,
       "email": "thor@marvel.com"
+    },
+    {
+      "id": 4,
+      "name": "Venom12",
+      "age": "555",
+      "email": "venom@marvel2.com"
+    },
+    {
+      "id": 5,
+      "name": "Spider Man",
+      "age": "16",
+      "email": "spiderman@marvel.com"
+    },
+    {
+      "id": 6,
+      "name": "batman",
+      "age": "55",
+      "email": "batman@marvel.com"
     }
   ]
 }
